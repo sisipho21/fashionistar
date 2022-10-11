@@ -1,0 +1,101 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<link href="mystyle.css" type="text/css" rel="stylesheet" />
+<script type="text/javascript">
+    function storeText(inputID) {
+        //check to see if the localStorage item already exists
+        var userInput = localStorage.userInfo;
+        //set it up for new data to be appended
+        if(userInput!=null) userInput+=" ";
+        else userInput="";
+        //add the new data
+        userInput += document.getElementById(inputID).value;
+        //set the localStorage field with the updated data
+        localStorage.userInfo = userInput;
+        //write it to the page
+        document.getElementById("result").innerHTML = localStorage.userInfo + "- entered to date";
+
+}
+    function clearText(){
+        var userInput = localStorage.userInfo;
+        if (userInput!=null) {
+            delete localStorage.userInfo;
+          }
+
+    }
+</script>
+    
+
+</head>
+
+
+
+<body>
+    
+    <header>
+        <h1>FASHIONISTAR</h1>
+        <h5>Your most affordable trends!<h5>
+        </header>
+
+        <nav>
+    
+            <a href="products.html">Products</a> |
+            <a href="newArrivals.html">New Arrivals</a> |
+            <a href="contact.html">Contact Us</a> |
+            <a href="aboutUs.html">About Us</a>
+        </nav>
+        <h3>Make yourself feel at home!</h3>
+    <div class="row">
+        <div class="column">
+          
+          
+          <video controls preload>
+            
+            <source src="Video 2.mp4" type="video/mp4; 'codecs='avc1.42E01E, mp4a.40.2'" />
+            <p> Your browser is old. <a href="cohagenPhoneCall.mp4">Download this video instead.</a> </p>
+            </video>
+        </div>
+        
+        <div class="column">
+          
+          <video controls preload>
+            
+            <source src="Video 1.mp4" type="video/mp4; 'codecs='avc1.42E01E, mp4a.40.2'" />
+            <p> Your browser is old. <a href="cohagenPhoneCall.mp4">Download this video instead.</a> </p>
+            </video>
+          </div>
+        
+      </div>
+
+      
+<h3>Your Wishlist!</h3>
+<input id="userText" type="text" placeholder="e.g. Turtleneck"/>
+<input type="button" value="Save" onclick="storeText('userText')"/>
+<input type="button" value="Delete" onclick="clearText()"/>
+<div id="result">
+    <script type="text/javascript">
+        if(localStorage.userInfo==null) document.write("Your wishlist info so far");
+        else document.write(localStorage.userInfo + " - entered before");
+        </script>
+        
+</div>
+
+<footer>
+<img src="mailLogo.png" width="30" height="30"/>
+<A HREF="mailto:tkssis001@myuct.ac.za">fashionista@gmail.co</A>|
+<img src="fbLogo.png" width="30" height="30"/>
+<A HREF="fashionistar">fashionistar</A>|
+<img src="twitterLogo2.png" width="30" height="30"/>
+<A HREF="@fashionistar_sa">@fashionistar_sa</A>|
+
+
+<A HREF="aboutUs.html">About Us</A>
+</footer>
+
+</body>
+
+</html>
